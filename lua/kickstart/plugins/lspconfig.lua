@@ -216,7 +216,7 @@ return {
             python = {
               analysis = {
                 autoSearchPaths = true,
-                typeCheckingMode = 'basic',
+                typeCheckingMode = 'off',
               },
             },
           },
