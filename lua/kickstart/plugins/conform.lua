@@ -40,7 +40,7 @@ return {
         typescript = { 'prettierd', 'prettier', stop_after_first = true },
         typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
         json = { 'prettier' },
-        python = { 'isort', 'black' },
+        python = { 'ruff_format', 'ruff_organize_imports' },
       },
     },
   },
