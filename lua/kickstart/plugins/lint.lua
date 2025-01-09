@@ -14,6 +14,15 @@ return {
         python = { 'ruff' },
       }
 
+      -- lint.linters.mypy.args = {
+      --   '--show-column-numbers',
+      --   '--show-error-end',
+      --   '--hide-error-context',
+      --   '--no-color-output',
+      --   '--no-error-summary',
+      --   '--no-pretty',
+      -- }
+
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
       -- lint.linters_by_ft = lint.linters_by_ft or {}

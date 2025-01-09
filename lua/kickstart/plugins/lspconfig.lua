@@ -216,7 +216,7 @@ return {
             python = {
               analysis = {
                 autoSearchPaths = true,
-                typeCheckingMode = 'off',
+                typeCheckingMode = 'standard',
               },
             },
           },
@@ -264,6 +264,7 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'mypy',
+        'ruff',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
