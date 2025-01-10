@@ -43,6 +43,7 @@ return {
         typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
         json = { 'prettier' },
         python = { 'ruff_format', 'ruff_organize_imports' },
+        cs = { 'csharpier' },
       },
     },
   },
