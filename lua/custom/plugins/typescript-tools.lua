@@ -6,6 +6,9 @@ return {
       tsserver_plugins = {
         '@styled/typescript-styled-plugin',
       },
+      tsserver_file_preferences = {
+        importModuleSpecifierPreference = 'non-relative',
+      },
     },
   },
 }

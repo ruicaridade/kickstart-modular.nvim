@@ -190,7 +190,6 @@ return {
             },
           },
         },
-        omnisharp = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -232,7 +231,6 @@ return {
         'stylua', -- Used to format Lua code
         'mypy',
         'ruff',
-        'ts_ls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
