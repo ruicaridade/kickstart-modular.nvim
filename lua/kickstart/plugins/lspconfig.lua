@@ -217,6 +217,7 @@ return {
               analysis = {
                 autoSearchPaths = true,
                 typeCheckingMode = 'standard',
+                diagnosticMode = 'workspace',
               },
             },
           },
