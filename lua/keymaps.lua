@@ -52,6 +52,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Buffers
-vim.keymap.set('n', '<leader>x', '<cmd>bd<CR>', { desc = 'Close buffer' })
+vim.keymap.set('n', '<leader>x', ':bnext<CR>:bd#<CR>', { noremap = true, silent = true, desc = 'Close Current Buffer' })
 
 -- vim: ts=2 sts=2 sw=2 et
