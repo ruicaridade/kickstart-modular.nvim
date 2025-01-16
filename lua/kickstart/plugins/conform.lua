@@ -42,6 +42,7 @@ return {
         json = { 'biome', 'prettierd', 'prettier' },
         python = { 'ruff_format', 'ruff_organize_imports' },
         cs = { 'csharpier' },
+        rust = { 'rustfmt', lsp_format = 'fallback' },
       },
     },
   },
