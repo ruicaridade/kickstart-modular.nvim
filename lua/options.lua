@@ -78,4 +78,7 @@ vim.o.shiftwidth = 2
 vim.o.expandtab = true
 vim.o.smartindent = true
 
+-- Saving backs up a local copy
+vim.opt.backupcopy = 'yes'
+
 -- vim: ts=2 sts=2 sw=2 et
