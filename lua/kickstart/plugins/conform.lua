@@ -15,7 +15,7 @@ return {
     },
     opts = {
       notify_on_error = false,
-      format_on_save = function(bufnr)
+      format_after_save = function(bufnr)
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
@@ -27,7 +27,6 @@ return {
           lsp_format_opt = 'fallback'
         end
         return {
-          timeout_ms = 500,
           lsp_format = lsp_format_opt,
         }
       end,
@@ -42,7 +41,7 @@ return {
         typescript = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
         typescriptreact = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
         json = { 'biome', 'prettierd', 'prettier' },
-        python = { 'ruff_format', 'ruff_organize_imports' },
+        python = { 'black', 'isort' },
         cs = { 'csharpier' },
         rust = { 'rustfmt', lsp_format = 'fallback' },
       },
