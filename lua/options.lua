@@ -81,4 +81,7 @@ vim.o.smartindent = true
 -- Saving backs up a local copy
 vim.opt.backupcopy = 'yes'
 
+-- Vertical column
+vim.api.nvim_set_option_value('colorcolumn', '80', {})
+
 -- vim: ts=2 sts=2 sw=2 et
