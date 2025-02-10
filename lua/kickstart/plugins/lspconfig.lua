@@ -207,6 +207,12 @@ return {
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      local virtual_env = os.getenv 'VIRTUAL_ENV'
+      local python_path = nil
+      if virtual_env then
+        python_path = virtual_env .. '/bin/python'
+      end
+
       local servers = {
         -- clangd = {},
         gopls = {},
@@ -214,7 +220,7 @@ return {
         pyright = {
           settings = {
             python = {
-              pythonPath = os.getenv 'VIRTUAL_ENV' .. '/bin/python',
+              pythonPath = python_path,
               analysis = {
                 typeCheckingMode = 'standard',
               },
