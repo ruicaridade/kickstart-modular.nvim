@@ -183,6 +183,7 @@ return {
       end
 
       local servers = {
+        sqls = {},
         clangd = {},
         zls = {},
         gopls = {},

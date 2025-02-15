@@ -48,6 +48,7 @@ return {
         zig = { 'zigfmt' },
         c = { 'clang-format' },
         cpp = { 'clang-format' },
+        sql = { 'sql_formatter' },
       },
     },
   },
