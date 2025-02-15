@@ -183,7 +183,8 @@ return {
       end
 
       local servers = {
-        -- clangd = {},
+        clangd = {},
+        zls = {},
         gopls = {},
         templ = {},
         pyright = {
