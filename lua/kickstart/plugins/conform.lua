@@ -19,6 +19,10 @@ return {
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
+        if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+          return
+        end
+
         local disable_filetypes = { c = true, cpp = true }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
@@ -34,7 +38,7 @@ return {
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        go = { 'goimports', 'gofmt' },
+        go = { 'goimports', 'gofmt', 'golines' },
         templ = { 'templ' },
         css = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
         html = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
