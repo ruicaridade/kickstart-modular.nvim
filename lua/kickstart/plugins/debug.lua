@@ -23,6 +23,7 @@ return {
 
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
+    'mfussenegger/nvim-dap-python',
   },
   keys = {
     -- Basic debugging keymaps, feel free to change to your liking!
@@ -55,6 +56,20 @@ return {
       desc = 'Debug: Step Out',
     },
     {
+      '<F4>',
+      function()
+        require('dapui').toggle()
+      end,
+      desc = 'Debug: See last session result.',
+    },
+    {
+      '<F7>',
+      function()
+        require('dap').restart()
+      end,
+      desc = 'Debug: Restart',
+    },
+    {
       '<leader>b',
       function()
         require('dap').toggle_breakpoint()
@@ -67,14 +82,6 @@ return {
         require('dap').set_breakpoint(vim.fn.input 'Breakpoint condition: ')
       end,
       desc = 'Debug: Set Breakpoint',
-    },
-    -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-    {
-      '<F7>',
-      function()
-        require('dapui').toggle()
-      end,
-      desc = 'Debug: See last session result.',
     },
   },
   config = function()
@@ -95,6 +102,7 @@ return {
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
         'delve',
+        'debugpy',
       },
     }
 
@@ -144,5 +152,8 @@ return {
         detached = vim.fn.has 'win32' == 0,
       },
     }
+
+    -- Configure Python
+    require('dap-python').setup()
   end,
 }
