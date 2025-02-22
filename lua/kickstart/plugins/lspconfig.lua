@@ -233,6 +233,20 @@ return {
         astro = {},
         ruby_lsp = {},
         prismals = {},
+        vtsls = {
+          settings = {
+            typescript = {
+              updateImportsOnFileMove = { enabled = 'always' },
+              suggest = {
+                completeFunctionCalls = true,
+              },
+              preferences = {
+                importModuleSpecifier = 'non-relative',
+                importModuleSpecifierPreference = 'non-relative',
+              },
+            },
+          },
+        },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
