@@ -56,6 +56,7 @@ return {
         sql = { 'sql_formatter' },
         ruby = { 'rubocop' },
         eruby = { 'erb_format' },
+        php = { 'php_cs_fixer' },
       },
     },
   },
