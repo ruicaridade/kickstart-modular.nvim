@@ -28,6 +28,9 @@ return {
         desc = '[C]opilot [C]hat [R]eset',
       },
     },
-    opts = {},
+    opts = {
+      model = 'claude-3.7-sonnet',
+      chat_autocomplete = false,
+    },
   },
 }
