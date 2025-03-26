@@ -231,7 +231,6 @@ return {
         },
         rust_analyzer = {},
         astro = {},
-        ruby_lsp = {},
         prismals = {},
         vtsls = {
           settings = {
