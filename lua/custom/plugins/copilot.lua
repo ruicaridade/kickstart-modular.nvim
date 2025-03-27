@@ -30,7 +30,7 @@ return {
     },
     opts = {
       model = 'claude-3.7-sonnet',
-      chat_autocomplete = false,
+      chat_autocomplete = true,
     },
   },
 }

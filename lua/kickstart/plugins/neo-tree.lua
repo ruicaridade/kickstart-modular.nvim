@@ -21,6 +21,18 @@ return {
           ['\\'] = 'close_window',
         },
       },
+      filtered_items = {
+        hide_dotfiles = false,
+        hide_by_name = {
+          '.git',
+          '.github',
+          '.gitignore',
+          'package-lock.json',
+          'yarn.lock',
+          'bun.lock',
+          'pnpm-lock.yaml',
+        },
+      },
     },
     close_if_last_window = true,
     popup_border_style = 'rounded',
