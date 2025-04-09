@@ -28,13 +28,6 @@ return {
   keys = {
     -- Basic debugging keymaps, feel free to change to your liking!
     {
-      '<F5>',
-      function()
-        require('dap').continue()
-      end,
-      desc = 'Debug: Start/Continue',
-    },
-    {
       '<F1>',
       function()
         require('dap').step_into()
@@ -61,6 +54,20 @@ return {
         require('dapui').toggle()
       end,
       desc = 'Debug: See last session result.',
+    },
+    {
+      '<F5>',
+      function()
+        require('dap').continue()
+      end,
+      desc = 'Debug: Start/Continue',
+    },
+    {
+      '<F6>',
+      function()
+        require('dap').stop()
+      end,
+      desc = 'Debug: Stop',
     },
     {
       '<F7>',
