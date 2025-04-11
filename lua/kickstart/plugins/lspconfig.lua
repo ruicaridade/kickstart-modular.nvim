@@ -188,6 +188,8 @@ return {
         zls = {},
         gopls = {},
         templ = {},
+        html = {},
+        htmx = {},
         pyright = {
           settings = {
             python = {
