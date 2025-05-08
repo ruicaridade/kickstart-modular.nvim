@@ -32,6 +32,9 @@ return {
           'bun.lock',
           'pnpm-lock.yaml',
         },
+        hide_by_pattern = {
+          '*_templ.go',
+        },
       },
     },
     close_if_last_window = true,
