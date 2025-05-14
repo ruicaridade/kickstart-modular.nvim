@@ -84,4 +84,11 @@ vim.opt.backupcopy = 'yes'
 -- Vertical column
 vim.api.nvim_set_option_value('colorcolumn', '120', {})
 
+-- Detect 'helm' filetype for yaml files in templates directory
+vim.filetype.add {
+  pattern = {
+    ['.*/templates/.*%.yaml'] = 'helm',
+  },
+}
+
 -- vim: ts=2 sts=2 sw=2 et
