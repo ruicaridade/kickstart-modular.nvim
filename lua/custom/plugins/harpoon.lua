@@ -7,10 +7,10 @@ return {
       local harpoon = require 'harpoon'
       harpoon.setup(opts)
 
-      vim.keymap.set('n', '<leader>a', function()
+      vim.keymap.set('n', '<leader>ha', function()
         harpoon:list():add()
       end, { desc = 'Harpoon Add' })
-      vim.keymap.set('n', '<leader>l', function()
+      vim.keymap.set('n', '<leader>hl', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
       end, { desc = 'Harpoon Toggle' })
       vim.keymap.set('n', '<C-t>1', function()
