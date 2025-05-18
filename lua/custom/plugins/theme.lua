@@ -1,25 +1,27 @@
 return {
   -- {
-  --   'catppuccin/nvim',
+  --   'rose-pine/neovim',
+  --   name = 'rose-pine',
   --   priority = 1000,
   --   config = function()
-  --     vim.cmd.colorscheme 'catppuccin-mocha'
+  --     require('rose-pine').setup {
+  --       styles = {
+  --         italic = false,
+  --       },
+  --     }
+  --
+  --     vim.cmd.colorscheme 'rose-pine'
   --     vim.cmd.hi 'Comment gui=none'
   --   end,
   -- },
   {
-    'rose-pine/neovim',
-    name = 'rose-pine',
+    'zenbones-theme/zenbones.nvim',
+    dependencies = 'rktjmp/lush.nvim',
+    lazy = false,
     priority = 1000,
     config = function()
-      require('rose-pine').setup {
-        styles = {
-          italic = false,
-        },
-      }
-
-      vim.cmd.colorscheme 'rose-pine'
-      vim.cmd.hi 'Comment gui=none'
+      vim.g.zenbones_darken_comments = 45
+      vim.cmd.colorscheme 'zenbones'
     end,
   },
 }
