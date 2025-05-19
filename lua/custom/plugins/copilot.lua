@@ -6,6 +6,14 @@ return {
     opts = {
       suggestion = {
         auto_trigger = true,
+        keymap = {
+          accept = '<M-l>',
+          accept_word = false,
+          accept_line = false,
+          next = '<M-]>',
+          prev = '<M-[>',
+          dismiss = '<C-]>',
+        },
       },
       copilot_model = 'gpt-4o-copilot',
     },
