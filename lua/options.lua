@@ -82,7 +82,7 @@ vim.o.smartindent = true
 vim.opt.backupcopy = 'yes'
 
 -- Vertical column
-vim.api.nvim_set_option_value('colorcolumn', '120', {})
+vim.api.nvim_set_option_value('colorcolumn', '121', {})
 
 -- Detect 'helm' filetype for yaml files in templates directory
 vim.filetype.add {
