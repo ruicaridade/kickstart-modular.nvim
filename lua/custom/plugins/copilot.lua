@@ -15,7 +15,7 @@ return {
           dismiss = '<C-]>',
         },
       },
-      copilot_model = 'gpt-4o-copilot',
+      copilot_model = 'claude-3.7-sonnet',
     },
   },
   {
@@ -24,14 +24,8 @@ return {
     version = false,
     opts = {
       provider = 'copilot',
-      copilot = {},
-      openai = {
-        endpoint = 'https://api.openai.com/v1',
-        model = 'gpt-4o',
-        timeout = 30000,
-        temperature = 0,
-        max_completion_tokens = 8192,
-        reasoning_effort = 'medium',
+      copilot = {
+        model = 'claude-3.7-sonnet',
       },
     },
     build = 'make',
