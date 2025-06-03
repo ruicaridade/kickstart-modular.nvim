@@ -214,7 +214,6 @@ return {
       end
 
       local servers = {
-        sqls = {},
         gopls = {},
         templ = {},
         html = {},

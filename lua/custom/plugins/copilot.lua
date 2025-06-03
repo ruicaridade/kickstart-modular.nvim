@@ -23,8 +23,10 @@ return {
     version = false,
     opts = {
       provider = 'copilot',
-      copilot = {
-        model = 'claude-3.7-sonnet',
+      providers = {
+        copilot = {
+          model = 'claude-3.7-sonnet',
+        },
       },
     },
     build = 'make',
