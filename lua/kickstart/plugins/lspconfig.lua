@@ -235,6 +235,23 @@ return {
               preferences = {
                 importModuleSpecifier = 'non-relative',
                 importModuleSpecifierPreference = 'non-relative',
+                includePackageJsonAutoImports = 'auto',
+              },
+              suggest = {
+                includeCompletionsForModuleExports = true,
+                includeAutomaticOptionalChainCompletions = true,
+              },
+            },
+            javascript = {
+              updateImportsOnFileMove = { enabled = 'always' },
+              preferences = {
+                importModuleSpecifier = 'non-relative',
+                importModuleSpecifierPreference = 'non-relative',
+                includePackageJsonAutoImports = 'auto',
+              },
+              suggest = {
+                includeCompletionsForModuleExports = true,
+                includeAutomaticOptionalChainCompletions = true,
               },
             },
           },
