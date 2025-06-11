@@ -228,30 +228,13 @@ return {
           },
         },
         rust_analyzer = {},
-        ts_ls = {
+        vtsls = {
           settings = {
             typescript = {
-              updateImportsOnFileMove = { enabled = 'always' },
               preferences = {
-                importModuleSpecifier = 'non-relative',
-                importModuleSpecifierPreference = 'non-relative',
-                includePackageJsonAutoImports = 'auto',
-              },
-              suggest = {
                 includeCompletionsForModuleExports = true,
-                includeAutomaticOptionalChainCompletions = true,
-              },
-            },
-            javascript = {
-              updateImportsOnFileMove = { enabled = 'always' },
-              preferences = {
+                includeCompletionsForImportStatements = true,
                 importModuleSpecifier = 'non-relative',
-                importModuleSpecifierPreference = 'non-relative',
-                includePackageJsonAutoImports = 'auto',
-              },
-              suggest = {
-                includeCompletionsForModuleExports = true,
-                includeAutomaticOptionalChainCompletions = true,
               },
             },
           },
