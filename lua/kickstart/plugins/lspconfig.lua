@@ -214,6 +214,7 @@ return {
       end
 
       local servers = {
+        terraformls = {},
         gopls = {},
         templ = {},
         html = {},
