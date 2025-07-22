@@ -59,6 +59,7 @@ return {
         ruby = { 'rubocop' },
         eruby = { 'erb_format' },
         php = { 'php_cs_fixer' },
+        terraform = { 'terraform_fmt' },
       },
     },
   },
