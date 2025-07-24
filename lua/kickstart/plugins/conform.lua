@@ -23,7 +23,7 @@ return {
           return
         end
 
-        local disable_filetypes = { c = true, cpp = true }
+        local disable_filetypes = { c = true, cpp = true, sql = true }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
         else
@@ -55,7 +55,6 @@ return {
         zig = { 'zigfmt' },
         c = { 'clang-format' },
         cpp = { 'clang-format' },
-        sql = { 'sql_formatter' },
         ruby = { 'rubocop' },
         eruby = { 'erb_format' },
         php = { 'php_cs_fixer' },
