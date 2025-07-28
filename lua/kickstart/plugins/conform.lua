@@ -1,3 +1,23 @@
+local function get_js_formatter()
+  local cwd = vim.fn.getcwd()
+  local biome_config = vim.fn.glob(cwd .. '/biome.json*', false, true)
+  local prettier_config = vim.fn.glob(cwd .. '/.prettier*', false, true)
+
+  local package_json = cwd .. '/package.json'
+  if vim.fn.filereadable(package_json) == 1 then
+    local content = vim.fn.readfile(package_json)
+    local package_str = table.concat(content, '\n')
+
+    if not vim.tbl_isempty(biome_config) or string.match(package_str, '"@biomejs/biome"') then
+      return { 'biome', 'biome-organize-imports' }
+    elseif not vim.tbl_isempty(prettier_config) or string.match(package_str, '"prettier"') then
+      return { 'prettier' }
+    end
+  end
+
+  return { 'prettier' }
+end
+
 return {
   { -- Autoformat
     'stevearc/conform.nvim',
@@ -40,15 +60,15 @@ return {
         lua = { 'stylua' },
         go = { 'goimports', 'gofmt', 'golines' },
         templ = { 'templ' },
-        css = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
-        html = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
-        javascript = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
-        javascriptreact = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
-        typescript = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
-        typescriptreact = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
-        json = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
-        jsonc = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
-        astro = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
+        css = { 'biome', 'prettier', stop_after_first = true },
+        html = { 'biome', 'prettier', stop_after_first = true },
+        javascript = get_js_formatter(),
+        javascriptreact = get_js_formatter(),
+        typescript = get_js_formatter(),
+        typescriptreact = get_js_formatter(),
+        json = { 'biome', 'prettier', stop_after_first = true },
+        jsonc = { 'biome', 'prettier', stop_after_first = true },
+        astro = { 'biome', 'prettier', stop_after_first = true },
         python = { 'black', 'isort', 'ruff_format', 'ruff_organize_imports' },
         cs = { 'csharpier' },
         rust = { 'rustfmt', lsp_format = 'fallback' },
