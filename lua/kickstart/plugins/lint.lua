@@ -1,17 +1,38 @@
-return {
+local function setup_javascript_lint(lint)
+  local js_linter = nil
 
+  -- Check if eslint or biome is available, and set the linter accordingly
+  if vim.fn.executable 'eslint' == 1 then
+    js_linter = 'eslint'
+  elseif vim.fn.executable 'biome' == 1 then
+    js_linter = 'biomejs'
+  end
+
+  -- If a JavaScript linter is available, set it for the relevant filetypes
+  if js_linter then
+    local js_fts = {
+      'javascript',
+      'javascriptreact',
+      'typescript',
+      'typescriptreact',
+      'json',
+    }
+
+    for _, ft in ipairs(js_fts) do
+      lint.linters_by_ft[ft] = { js_linter }
+    end
+  end
+end
+
+return {
   { -- Linting
     'mfussenegger/nvim-lint',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
-      lint.linters_by_ft = {
-        -- markdown = { 'markdownlint' },
-        javascript = { 'eslint' },
-        javascriptreact = { 'eslint' },
-        typescript = { 'eslint' },
-        typescriptreact = { 'eslint' },
-      }
+
+      lint.linters_by_ft = {}
+      setup_javascript_lint(lint)
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
       -- instead set linters_by_ft like this:
