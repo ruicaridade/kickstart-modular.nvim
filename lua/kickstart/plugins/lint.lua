@@ -1,11 +1,22 @@
 local function setup_javascript_lint(lint)
   local js_linter = nil
 
-  -- Check if eslint or biome is available, and set the linter accordingly
-  if vim.fn.executable 'eslint' == 1 then
-    js_linter = 'eslint'
-  elseif vim.fn.executable 'biome' == 1 then
-    js_linter = 'biomejs'
+  -- Check if biome or eslint is available in the project
+  local cwd = vim.fn.getcwd()
+  local biome_config = vim.fn.glob(cwd .. '/biome.json*', false, true)
+  local eslint_config = vim.fn.glob(cwd .. '/.eslintrc*', false, true)
+
+  -- Also check for package.json configs
+  local package_json = cwd .. '/package.json'
+  if vim.fn.filereadable(package_json) == 1 then
+    local content = vim.fn.readfile(package_json)
+    local package_str = table.concat(content, '\n')
+
+    if not vim.tbl_isempty(biome_config) or string.match(package_str, '"@biomejs/biome"') then
+      js_linter = 'biomejs'
+    elseif not vim.tbl_isempty(eslint_config) or string.match(package_str, '"eslint"') then
+      js_linter = 'eslint'
+    end
   end
 
   -- If a JavaScript linter is available, set it for the relevant filetypes
