@@ -69,7 +69,7 @@ return {
         json = { 'biome', 'prettier', stop_after_first = true },
         jsonc = { 'biome', 'prettier', stop_after_first = true },
         astro = { 'biome', 'prettier', stop_after_first = true },
-        python = { 'black', 'isort', 'ruff_format', 'ruff_organize_imports' },
+        python = { 'black', 'isort' },
         cs = { 'csharpier' },
         rust = { 'rustfmt', lsp_format = 'fallback' },
         zig = { 'zigfmt' },
