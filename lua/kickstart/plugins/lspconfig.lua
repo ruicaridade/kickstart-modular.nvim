@@ -230,6 +230,11 @@ return {
         },
         rust_analyzer = {},
         vtsls = {
+          experimental = {
+            completion = {
+              enableServerSideFuzzyMatch = true,
+            },
+          },
           settings = {
             typescript = {
               preferences = {
