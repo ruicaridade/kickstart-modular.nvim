@@ -238,6 +238,7 @@ return {
           settings = {
             typescript = {
               preferences = {
+                preferTypeOnlyAutoImports = true,
                 includeCompletionsForModuleExports = true,
                 includeCompletionsForImportStatements = true,
                 importModuleSpecifier = 'non-relative',
