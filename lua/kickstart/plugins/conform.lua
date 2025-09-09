@@ -79,6 +79,7 @@ return {
         php = { 'php_cs_fixer' },
         terraform = { 'terraform_fmt' },
         rust = { 'rustfmt', 'dioxus', 'rustywind' },
+        elixir = { 'mix' },
       },
     },
   },
